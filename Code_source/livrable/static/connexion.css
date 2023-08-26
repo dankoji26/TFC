@@ -1,4 +1,8 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
   margin: 0;
   color: #ac514b;
   background: #ad4e4e;
