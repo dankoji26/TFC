@@ -47,17 +47,17 @@ def ajouter_users(username, email, password, nom, postnom, date_naisse, categori
      conn.commit()
      conn.close()
      
-'''def ajouter_technicien(nom, postnom, password, fonction, numtel):
+def ajouter_ouvrages(date, img, nom, prix, auteur, categorie):
      conn = mysql.connector.connect(user='root', password='',
                               host='localhost',
-                              database='donnees')
+                              database='librairie')
 
-     reference = (nom, postnom, password, fonction, numtel)
+     reference = (date, img, nom, prix, auteur, categorie)
      cursor = conn.cursor()
 
-     cursor.execute(""" INSERT INTO technicien(nom,post_nom,password,fonction,numtel) VALUES(%s,%s,%s,%s,%s)""", reference)
+     cursor.execute(""" INSERT INTO ouvrage(date, img, nom, prix, auteur, categorie) VALUES(%s,%s,%s,%f,%s,%s)""", reference)
      conn.commit()
-     conn.close()'''
+     conn.close()
      
 def afficher_ouvrage():
      conn = mysql.connector.connect(user='root', password='',
