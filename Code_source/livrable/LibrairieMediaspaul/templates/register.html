@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{url_for('static', filename='lestyle.css')}}" />
+</head>
+<body>
+<div class="container">
+		<div class="logo">
+			<img src="/static/login/photos/logo-mediaspaul-small.png" alt="logo du site" style="background-color: white;">
+		</div>
+</div>
+<form class="box" action="" method="post">
+	<h1 class="box-logo box-title"><a href="login.html">Mediaspaul</a></h1>
+    <h1 class="box-title">S'inscrire</h1>
+	<input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur" required />
+    <input type="text" class="box-input" name="email" placeholder="Email" required />
+	<input type="text" class="box-input" name="nom" placeholder="Nom" required />
+	<input type="text" class="box-input" name="postnom" placeholder="Postnom" required />
+	<input type="date" class="box-input" name="date_naisse" placeholder="Date de naissance" required />
+	<select type="text" class="box-input" name="genre" placeholder="Genre" required>
+		<option type="checkbox" name="genre" value="Masculin" > Masculin </option>
+		<option type="checkbox" name="genre" value="Feminin" > Feminin </option>
+	</select>
+    <input type="password" class="box-input" name="password" placeholder="Mot de passe" required />
+	<select id="choix" class= "box-input"name= "choix" paceholder= "Categorie" required>
+        <option type="checkbox" name="category[]" value="Fiction" > Art-Photography </option>
+        <option type="checkbox" name="category[]" value="Non-fiction" > Biography </option>
+		<option type="checkbox" name="category[]" value="BD et Mangas" > Business-Finance-Law </option>
+		<option type="checkbox" name="category[]" value="Art et Loisirs" > Childrens-Books </option>
+		<option type="checkbox" name="category[]" value="Science fiction" > Computing </option>
+        <option type="checkbox" name="category[]" value="Livres pratiques" > Crafts-Hobbies </option>
+		<option type="checkbox" name="category[]" value="Hobbies" > Crime-Thriller </option>
+		<option type="checkbox" name="category[]" value="Science et Technique" > Dictionnaries-Languages </option>
+		<option type="checkbox" name="category[]" value="lLitterature" > Entertainment </option>
+		<option type="checkbox" name="category[]" value="Poesie" > Food-Drink </option>
+		<option type="checkbox" name="category[]" value="Rare" > Graphic-Novels-Anime-Manga </option>
+		<option type="checkbox" name="category[]" value="Fiction" > Health </option>
+        <option type="checkbox" name="category[]" value="Non-fiction" > History-Archaeology </option>
+		<option type="checkbox" name="category[]" value="BD et Mangas" > Home-Garden </option>
+		<option type="checkbox" name="category[]" value="Art et Loisirs" > Humor </option>
+		<option type="checkbox" name="category[]" value="Science fiction" > Medical </option>
+        <option type="checkbox" name="category[]" value="Livres pratiques" > Mind-Body-Spirit </option>
+		<option type="checkbox" name="category[]" value="Hobbies" > Natural-History </option>
+		<option type="checkbox" name="category[]" value="Science et Technique" > Personal-Development </option>
+		<option type="checkbox" name="category[]" value="lLitterature" > Poaetry-Drama </option>
+		<option type="checkbox" name="category[]" value="Poesie" > Reference </option>
+		<option type="checkbox" name="category[]" value="Rare" > Religion </option>
+		<option type="checkbox" name="category[]" value="Fiction" > Romance </option>
+        <option type="checkbox" name="category[]" value="Non-fiction" > Science-Fiction-Fantasy-Horror </option>
+		<option type="checkbox" name="category[]" value="BD et Mangas" > Science-Geography </option>
+		<option type="checkbox" name="category[]" value="Art et Loisirs" > Society-Social-Sciences </option>
+		<option type="checkbox" name="category[]" value="Science fiction" > Sport </option>
+        <option type="checkbox" name="category[]" value="Livres pratiques" > Stationery </option>
+		<option type="checkbox" name="category[]" value="Hobbies" > Teaching-Resources-Education </option>
+		<option type="checkbox" name="category[]" value="Science et Technique" > Technology-Engineering </option>
+		<option type="checkbox" name="category[]" value="lLitterature" > Teen-Young-Adult </option>
+		<option type="checkbox" name="category[]" value="Poesie" > Transport </option>
+		<option type="checkbox" name="category[]" value="Rare" > Travel-Holiday-Guides </option>
+	</selecct>
+    <input type="submit" name="submit" value="S'inscrire" class="box-button" />
+    <p class="box-register">Déjà inscrit? <a href="login.php">Connectez-vous ici</a></p>
+</form>
+</body>
+</html>
