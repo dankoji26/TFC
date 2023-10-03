@@ -1,5 +1,6 @@
 import mysql.connector
 import time
+'''from flask_jsglue import JSGlue'''
 
 
 
