@@ -3,7 +3,7 @@ import time
 
 
 
-def afficher():
+def afficher_users():
     conn = mysql.connector.connect(user='root', password='',
                                 host='localhost',
                                 database='librairie')
@@ -13,7 +13,62 @@ def afficher():
     return rows
     conn.commit()
     conn.close()
-    
+
+def ajouter_users(username, email, password, nom, postnom, date_naisse, categorie, genre):
+     conn = mysql.connector.connect(user='root', password='',
+                              host='localhost',
+                              database='libraire')
+
+     reference = (username, email, password, nom, postnom, password, date_naisse, categorie, genre)
+     cursor = conn.cursor()
+     cursor.execute(""" INSERT INTO users(username, email, password, nom, postnom, password, date_naisse, categorie, genre) VALUES(%s,%s,%s, %s,%s,%s, %s,%s,%s)""", reference)
+     conn.commit()
+     conn.close()
+
+def supprimer_users():
+     conn = mysql.connector.connect(user='root', password='',
+                              host='localhost',
+                              database='librairie')
+     cursor = conn.cursor()
+     cursor.execute(""" DELETE FROM users WHERE id==%s """)
+     rows = cursor.fetchall()
+     return rows
+     conn.commit()
+     conn.close()
+
+def afficher_ouvrage():
+    conn = mysql.connector.connect(user='root', password='',
+                                host='localhost',
+                                database='librairie')
+    cursor = conn.cursor()
+    cursor.execute(""" SELECT image, name, author, price, devise, category FROM ouvrage """)
+    rows = cursor.fetchall()
+    return rows
+    conn.commit()
+    conn.close()
+
+def ajouter_ouvrages(date, img, nom, prix, auteur, categorie):
+     conn = mysql.connector.connect(user='root', password='',
+                              host='localhost',
+                              database='librairie')
+
+     reference = (date, img, nom, prix, auteur, categorie)
+     cursor = conn.cursor()
+
+     cursor.execute(""" INSERT INTO ouvrage(image, name, author, price, devise, category) VALUES(%s,%s,%s,%f,%s,%s)""", reference)
+     conn.commit()
+     conn.close()
+
+def supprimer_ouvrage():
+     conn = mysql.connector.connect(user='root', password='',
+                              host='localhost',
+                              database='librairie')
+     cursor = conn.cursor()
+     cursor.execute(""" DELETE FROM ouvrage WHERE id==%s """)
+     rows = cursor.fetchall()
+     return rows
+     conn.commit()
+     conn.close()
 '''def technicien():
     conn = mysql.connector.connect(user='root', password='',
                                 host='localhost',
@@ -36,40 +91,10 @@ def temps():
     conn.commit()
     conn.close()'''
 
-def ajouter_users(username, email, password, nom, postnom, date_naisse, categorie, genre):
-     conn = mysql.connector.connect(user='root', password='',
-                              host='localhost',
-                              database='libraire')
 
-     reference = (username, email, password, nom, postnom, password, date_naisse, categorie, genre)
-     cursor = conn.cursor()
-     cursor.execute(""" INSERT INTO users(username, email, password, nom, postnom, password, date_naisse, categorie, genre) VALUES(%s,%s,%s, %s,%s,%s, %s,%s,%s)""", reference)
-     conn.commit()
-     conn.close()
      
-def ajouter_ouvrages(date, img, nom, prix, auteur, categorie):
-     conn = mysql.connector.connect(user='root', password='',
-                              host='localhost',
-                              database='librairie')
 
-     reference = (date, img, nom, prix, auteur, categorie)
-     cursor = conn.cursor()
-
-     cursor.execute(""" INSERT INTO ouvrage(date, img, nom, prix, auteur, categorie) VALUES(%s,%s,%s,%f,%s,%s)""", reference)
-     conn.commit()
-     conn.close()
      
-def afficher_ouvrage():
-     conn = mysql.connector.connect(user='root', password='',
-                              host='127.0.0.1',
-                              database='libraire')
-     cursor = conn.cursor()
-     cursor.execute(" SELECT date, img, nom, prix, description, auteur, categorie")
-     rows = cursor.fetchall()
-     return rows
-
-     conn.commit()
-     conn.close()
 
 
 '''def infos_site():
@@ -98,5 +123,5 @@ def afficher_ouvrage():
     conn.commit()
     conn.close()'''
 
-aff= afficher()
+aff= afficher_ouvrage()
 print(aff)
