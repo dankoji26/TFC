@@ -1,5 +1,5 @@
 body {
-    background: #1c242d;
+    background: #dee1e6;
   }
   .box {
     border: 1px solid #c4c4c4;
@@ -23,7 +23,7 @@ body {
   }
   .box-button {
     border-radius: 5px;
-    background: #d2483c;
+    background: #df5b5b;
     text-align: center;
     cursor: pointer;
     font-size: 19px;

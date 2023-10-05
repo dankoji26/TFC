@@ -9,8 +9,8 @@
 			<img src="/static/login/photos/logo-mediaspaul-small.png" alt="logo du site" style="background-color: white;">
 		</div>
 </div>
-<form class="box" action="" method="post">
-	<h1 class="box-logo box-title"><a href="login.html">Mediaspaul</a></h1>
+<form class="box"  method="post">
+	<h1 class="box-logo box-title"><a href="{{url_for('register')}}">Mediaspaul</a></h1>
     <h1 class="box-title">S'inscrire</h1>
 	<input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur" required />
     <input type="text" class="box-input" name="email" placeholder="Email" required />
@@ -58,7 +58,7 @@
 		<option type="checkbox" name="category[]" value="Rare" > Travel-Holiday-Guides </option>
 	</selecct>
     <input type="submit" name="submit" value="S'inscrire" class="box-button" />
-    <p class="box-register">Déjà inscrit? <a href="login.php">Connectez-vous ici</a></p>
+    <p class="box-register">Déjà inscrit? <a href="{{url_for('login')}}">Connectez-vous ici</a></p>
 </form>
 </body>
 </html>

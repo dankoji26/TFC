@@ -18,11 +18,11 @@ def afficher_users():
 def ajouter_users(username, email, password, nom, postnom, date_naisse, categorie, genre):
      conn = mysql.connector.connect(user='root', password='',
                               host='localhost',
-                              database='libraire')
+                              database='librairie')
 
-     reference = (username, email, password, nom, postnom, password, date_naisse, categorie, genre)
+     reference = (username, email, password, nom, postnom, date_naisse, categorie, genre)
      cursor = conn.cursor()
-     cursor.execute(""" INSERT INTO users(username, email, password, nom, postnom, password, date_naisse, categorie, genre) VALUES(%s,%s,%s, %s,%s,%s, %s,%s,%s)""", reference)
+     cursor.execute(""" INSERT INTO users(username, email, password, nom, postnom, date_naisse, categorie, genre) VALUES(%s,%s,%s, %s,%s,%s, %s,%s)""", reference)
      conn.commit()
      conn.close()
 
@@ -124,5 +124,5 @@ def temps():
     conn.commit()
     conn.close()'''
 
-aff= afficher_ouvrage()
-print(aff)
+#aff= afficher_ouvrage()
+#print(aff)
