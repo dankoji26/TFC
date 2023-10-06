@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="../static/images/logo-mediaspaul-small.png" type="">
+	<link rel="stylesheet" href="{{url_for('static', filename='lestyle.css')}}"/>
+</head>
+<body>
+	
+
+<div class="container">
+		<div class="logo">
+			<img src="/static/login/photos/logo-mediaspaul-small.png" alt="logo du site" style="background-color: white;">
+		</div>
+	</div>
+<form class="box" method="post">
+<h1 class="box-logo box-title"><a href="#">Mediaspaul</a></h1>
+<h1 class="box-title">Connexion Admin</h1>
+<input type="text" class="box-input" name="username" placeholder="Nom d'utilisateur">
+<input type="password" class="box-input" name="password" placeholder="Mot de passe">
+<input type="submit" value="Connexion " name="submit" class="box-button">
+<p class="box-register">Vous êtes nouveau ici? <a href="{{url_for('adminregister')}}">S'inscrire</a></p>
+    <p class="errorMessage"></p>
+</form>
+</body>
+</html>

@@ -6,6 +6,36 @@ import basededonnees
 app = Flask(__name__)
 #JSGlue(app)
 
+##################################################### ADMINISTRATEUR #####################################
+##################################################### connexion admin ####################################
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    if request.method=='POST':
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        # Vérifiez le nom d'utilisateur et le mot de passe dans la base de données
+
+        if basededonnees.usernameadmin_exists(username) and basededonnees.passwordadmin_is_correct(username, password):
+            # Le nom d'utilisateur et le mot de passe sont corrects
+            return redirect(url_for('index'))
+        else:
+            # Le nom d'utilisateur et le mot de passe sont incorrects
+            return render_template("register.html", error="Le nom d'utilisateur ou le mot de passe est incorrect")
+    return render_template("admin.html")
+
+################################################## register admin ###########################################
+@app.route('/adminregister', methods=['GET', 'POST'])
+def adminregister():
+    if request.method=='POST':
+            username = request.form.get("username")
+            password = request.form.get("password")
+            basededonnees.ajouter_admin(username, password)
+            return redirect(url_for('admin'))
+    return render_template('adminregister.html')
+#################################################### FIN ADMINISTRATEUR #######################################
+#################################################### UTILISATEUR ##############################################
+#################################################### CONNEXION UTILISATEUR ####################################
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method=='POST':
@@ -21,7 +51,7 @@ def login():
             # Le nom d'utilisateur et le mot de passe sont incorrects
             return render_template("register.html", error="Le nom d'utilisateur ou le mot de passe est incorrect")
     return render_template("login.html")
-
+#################################################### ENREGISTREMENT UTILISATEUR ##############################
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method=='POST':
@@ -36,19 +66,19 @@ def register():
             basededonnees.ajouter_users(username, email, password, nom, postnom, date_naisse, categorie, genre)
             return redirect(url_for('login'))
     return render_template('register.html')
-
+############################################### ACCEUIL UTILISATEUR ###########################################
 @app.route('/index')
 def index():
     return render_template("index.html")
-
+############################################# APROPOS UTILISATEUR ##############################################
 @app.route('/about', methods=['GET', 'POST'])
 def about():
      return render_template("about.html")
-
+############################################# OUVRAGE UTILISATEUR ##############################################
 @app.route('/product')
 def product():
      return render_template("product.html")
-
+############################################# CONTACT UTILISATEUR ##############################################
 @app.route('/contact')
 def contact():
      return render_template("contact.html")
