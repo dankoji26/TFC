@@ -10,16 +10,16 @@
       <meta name="keywords" content="" />
       <meta name="description" content="" />
       <meta name="author" content="" />
-      <link rel="shortcut icon" href="images/logo-mediaspaul-small.png" type="">
+      <link rel="shortcut icon" href="../static/images/logo-mediaspaul-small.png" type="">
       <title>Mediaspaul</title>
       <!-- bootstrap core css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      <link rel="stylesheet" type="text/css" href="../static/stylesite/bootstrap.css" />
       <!-- font awesome style -->
-      <link href="css/font-awesome.min.css" rel="stylesheet" />
+      <link href="../static/stylesite/font-awesome.min.css" rel="stylesheet" />
       <!-- Custom styles for this template -->
-      <link href="css/style.css" rel="stylesheet" />
+      <link href="../static/stylesite/style.css" rel="stylesheet" />
       <!-- responsive style -->
-      <link href="css/responsive.css" rel="stylesheet" />
+      <link href="../static/stylesite/style.css" rel="stylesheet" />
    </head>
    <body class="sub_page">
       <div class="hero_area">
@@ -27,26 +27,26 @@
          <header class="header_section">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="images/logo-mediaspaul-small.png" alt="#" /></a>
+                  <a class="navbar-brand" href="{{url_for('index')}}"><img width="250" src="../static/images/logo-mediaspaul-small.png" alt="#" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="navbar-nav">
                         <li class="nav-item">
-                           <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
+                           <a class="nav-link" href="{{url_for('index')}}">Acceuil <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
+                           <a class="nav-link dropdown-toggle" href="{{url_for('about')}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
                            <ul class="dropdown-menu">
-                              <li><a href="about.html">Apropos</a></li>
+                              <li><a href="{{url_for('about')}}">Apropos</a></li>
                            </ul>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="product.html">Ouvrages</a>
+                           <a class="nav-link" href="{{url_for('product')}}">Ouvrages</a>
                         </li>
                         <li class="nav-item active">
-                           <a class="nav-link" href="contact.html">Contact</a>
+                           <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="#">
@@ -136,7 +136,7 @@
             <div class="row">
                <div class="col-lg-8 offset-lg-2">
                   <div class="full">
-                     <form action="index.html">
+                     <form action="{{url_for('index')}}">
                         <fieldset>
                            <input type="text" placeholder="Entrez Votre Nom Complet" name="name" required />
                            <input type="email" placeholder="Entrez Votre Adresse Email" name="email" required />
@@ -156,7 +156,7 @@
          <div class="container">
             <div class="box">
                <div class="arrival_bg_box">
-                  <img src="images/books-1281581_1280.jpg" alt="">
+                  <img src="../static/images/books-1281581_1280.jpg" alt="">
                </div>
                <div class="row">
                   <div class="col-md-6 ml-auto">
@@ -207,7 +207,7 @@
                </div>
                <div class="col-md-4 footer-col">
                   <div class="footer_detail">
-                     <a href="index.html" class="footer-logo">
+                     <a href="{{url_for('index')}}" class="footer-logo">
                         Librairie
                      </a>
                      <p>
@@ -245,12 +245,12 @@
       </footer>
       <!-- footer section -->
       <!-- jQery -->
-      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
       <!-- popper js -->
-      <script src="js/popper.min.js"></script>
+      <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
       <!-- bootstrap js -->
-      <script src="js/bootstrap.js"></script>
+      <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
       <!-- custom js -->
-      <script src="js/custom.js"></script>
+      <script src="{{url_for('static', filename='js/custom.js')}}"></script>
    </body>
 </html>

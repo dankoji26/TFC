@@ -27,26 +27,26 @@
          <header class="header_section">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="../static/images/logo-mediaspaul-small.png" alt="#" /></a>
+                  <a class="navbar-brand" href="{{url_for('index')}}"><img width="250" src="../static/images/logo-mediaspaul-small.png" alt="#" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="navbar-nav">
                         <li class="nav-item active">
-                           <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
+                           <a class="nav-link" href="{{url_for('index')}}">Acceuil <span class="sr-only">(current)</span></a>
                         </li>
                        <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
+                           <a class="nav-link dropdown-toggle" href="{{url_for('about')}}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">about <span class="caret"></span></a>
                            <ul class="dropdown-menu">
-                              <li><a href="about.html">Apropos</a></li>
+                              <li><a href="{{url_for('about')}}">Apropos</a></li>
                            </ul>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="product.html">ouvrage</a>
+                           <a class="nav-link" href="{{url_for('product')}}">ouvrage</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="contact.html">Contact</a>
+                           <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="#">
@@ -512,7 +512,7 @@ Bien plus qu’une simple librairie d’éditeur, la librairie paulinienne est a
                <div class="col-md-4">
                    <div class="full">
                       <div class="logo_footer">
-                        <a href="index.html"><img width="210" src="../static/images/logo-mediaspaul-small.png" alt="#" /></a>
+                        <a href="{{url_for('index')}}"><img width="210" src="../static/images/logo-mediaspaul-small.png" alt="#" /></a>
                       </div>
                       <div class="information_f">
                         <p><strong>ADDRESS:</strong> Avenue Lomami 48
@@ -532,7 +532,7 @@ Bien plus qu’une simple librairie d’éditeur, la librairie paulinienne est a
                         <h3>Menu</h3>
                         <ul>
                            <li><a href="index.html">Acceuil</a></li>
-                           <li><a href="about.html">Apropos</a></li>
+                           <li><a href="{{url_for('about')}}">Apropos</a></li>
                            <li><a href="product.html">Ouvrages</a></li>
                            <li><a href="blog_list.html">Blog</a></li>
                            <li><a href="contact.html">Contact</a></li>
@@ -544,7 +544,7 @@ Bien plus qu’une simple librairie d’éditeur, la librairie paulinienne est a
                         <h3>Compte</h3>
                         <ul>
                            <li><a href="#">Mon profile</a></li>
-                           <li><a href="login.html">Deconnexion</a></li>
+                           <li><a href="{{url_for('login')}}">Deconnexion</a></li>
                         </ul>
                      </div>
                   </div>
@@ -580,10 +580,10 @@ Bien plus qu’une simple librairie d’éditeur, la librairie paulinienne est a
       <!-- jQery -->
       <script src="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
       <!-- popper js -->
-      <script src="js/popper.min.js"></script>
+      <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
       <!-- bootstrap js -->
-      <script src="js/bootstrap.js"></script>
+      <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
       <!-- custom js -->
-      <script src="js/custom.js"></script>
+      <script src="{{url_for('static', filename='js/custom.js')}}"></script>
    </body>
 </html>
