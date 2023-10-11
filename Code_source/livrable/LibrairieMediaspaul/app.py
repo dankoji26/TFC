@@ -33,10 +33,19 @@ def adminregister():
             basededonnees.ajouter_admin(username, password)
             return redirect(url_for('admin'))
     return render_template('adminregister.html')
-
+############################################## Tableau de bord ##############################################
 @app.route('/adminindex')
 def adminindex():
      return render_template("adminindex.html")
+@app.route('/ajouterusers')
+def ajouterusers():
+     return render_template("ajouterusers.html")
+@app.route('/afficherusers')
+def afficherusers():
+     return render_template("afficherusers.html")
+@app.route('/afficherlivre')
+def afficherlivre():
+     return render_template("afficherlivre.html")
 #################################################### FIN ADMINISTRATEUR #######################################
 #################################################### UTILISATEUR ##############################################
 #################################################### CONNEXION UTILISATEUR ####################################
