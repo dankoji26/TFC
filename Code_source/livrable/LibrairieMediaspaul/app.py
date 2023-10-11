@@ -18,10 +18,10 @@ def admin():
 
         if basededonnees.usernameadmin_exists(username) and basededonnees.passwordadmin_is_correct(username, password):
             # Le nom d'utilisateur et le mot de passe sont corrects
-            return redirect(url_for('index'))
+            return redirect(url_for('adminindex'))
         else:
             # Le nom d'utilisateur et le mot de passe sont incorrects
-            return render_template("register.html", error="Le nom d'utilisateur ou le mot de passe est incorrect")
+            return render_template("adminregister.html", error="Le nom d'utilisateur ou le mot de passe est incorrect")
     return render_template("admin.html")
 
 ################################################## register admin ###########################################
@@ -33,6 +33,10 @@ def adminregister():
             basededonnees.ajouter_admin(username, password)
             return redirect(url_for('admin'))
     return render_template('adminregister.html')
+
+@app.route('/adminindex')
+def adminindex():
+     return render_template("adminindex.html")
 #################################################### FIN ADMINISTRATEUR #######################################
 #################################################### UTILISATEUR ##############################################
 #################################################### CONNEXION UTILISATEUR ####################################
