@@ -37,8 +37,19 @@ def adminregister():
 @app.route('/adminindex')
 def adminindex():
      return render_template("adminindex.html")
-@app.route('/ajouterusers')
+@app.route('/ajouterusers', methods=['GET','POST'])
 def ajouterusers():
+     if request.method=='POST':
+        username = request.form.get("username")
+        email = request.form.get("email")
+        password = request.form.get("password")
+        nom = request.form.get("nom")
+        postnom = request.form.get("postnom")
+        date_naisse = request.form.get("date_naisse")
+        categorie = request.form.get("choix")
+        genre = request.form.get("genre")
+        basededonnees.ajouter_users(username, email, password, nom, postnom, date_naisse, categorie, genre)
+        return redirect(url_for('ajouterusers'))    
      return render_template("ajouterusers.html")
 @app.route('/afficherusers')
 def afficherusers():
@@ -46,6 +57,12 @@ def afficherusers():
 @app.route('/afficherlivre')
 def afficherlivre():
      return render_template("afficherlivre.html")
+@app.route('/supprimerusers')
+def supprimerusers():
+     return render_template("supprimerusers.html")
+@app.route('/modifierusers')
+def modifierusers():
+     return render_template("modifierusers.html")
 #################################################### FIN ADMINISTRATEUR #######################################
 #################################################### UTILISATEUR ##############################################
 #################################################### CONNEXION UTILISATEUR ####################################
@@ -97,7 +114,9 @@ def contact():
      return render_template("contact.html")
 
 
-
+@app.route('/recherche')
+def recherche():
+    return render_template("recherche.html")
 
 
 if __name__=='__main__':
