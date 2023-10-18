@@ -12,6 +12,19 @@
       <meta name="author" content="" />
       <link rel="shortcut icon" href="../static/images/logo-mediaspaul-small.png" type="">
       <title>Mediaspaul</title>
+      <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../static/assets/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../static/assets/css/themify-icons.css">
+      <link rel="stylesheet" href="../static/assets/css/metisMenu.css">
+      <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="../static/assets/css/slicknav.min.css">
+      <!-- amchart css -->
+      <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+      <!-- others css -->
+      <link rel="stylesheet" href="../static/assets/css/typography.css">
+      <link rel="stylesheet" href="../static/assets/css/default-css.css">
+      <link rel="stylesheet" href="../static/assets/css/styles.css">
+      <link rel="stylesheet" href="../static/assets/css/responsive.css">
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="../static/stylesite/bootstrap.css" />
       <!-- font awesome style -->
@@ -109,7 +122,18 @@
                         </li>
                      </ul>
                   </div>
+                  
                </nav>
+               <div class="col-sm-6 clearfix">
+                  <div class="user-profile pull-right">
+                      <img class="avatar user-thumb" src="../static/assets/images/author/avatar.png" alt="avatar">
+                      <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Admin <i class="fa fa-angle-down"></i></h4>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{{url_for('admin')}}">Deconnexion</a>
+                          <a class="dropdown-item" href="{{url_for('profile')}}">Profile</a>
+                      </div>
+                  </div>
+              </div>
             </div>
          </header>
          <!-- end header section -->
@@ -135,8 +159,9 @@
                   Nos <span>ouvrages</span>
                </h2>
             </div>
+            {% for livres in Livre %}
             <div class="row">
-               <div class="col-sm-6 col-md-4 col-lg-3">
+               <div class="col-md-3">
                   <div class="box">
                      <div class="option_container">
                         <div class="options">
@@ -149,294 +174,20 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p1.png" alt="">
+                        <img src="{{ livres[1] }}" alt="{{ livres[1] }}">
                      </div>
                      <div class="detail-box">
                         <h5>
-                           Men's Shirt
+                           {{ livres[2] }}
                         </h5>
                         <h6>
-                           $75
+                           {{ livres[4] }} {{ livres[5] }}
                         </h6>
                      </div>
                   </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p2.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $80
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p3.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $68
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p4.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $70
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p5.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $75
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p6.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $58
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p7.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $80
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p8.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p9.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Ajouter au panier
-                           </a>
-                           <a href="" class="option2">
-                          voir
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p10.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p11.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                              Ajouter au panier
-                              </a>
-                              <a href="" class="option2">
-                             voir
-                              </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p12.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
+               </div>              
             </div>
+            {% endfor %}
             <div class="btn-box">
                <a href="">
               Voir Tout nos oubrages

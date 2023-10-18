@@ -13,8 +13,7 @@ def afficher_users():
     cursor.execute(""" SELECT * FROM users """)
     rows = cursor.fetchall()
     return rows
-    conn.commit()
-    conn.close()
+    
 
 def ajouter_users(username, email, password, nom, postnom, date_naisse, categorie, genre):
      conn = mysql.connector.connect(user='root', password='',
@@ -43,11 +42,10 @@ def afficher_ouvrage():
                                 host='localhost',
                                 database='librairie')
     cursor = conn.cursor()
-    cursor.execute(""" SELECT image, name, author, price, devise, category FROM ouvrage """)
+    cursor.execute(""" SELECT * FROM ouvrage """)
     rows = cursor.fetchall()
     return rows
-    conn.commit()
-    conn.close()
+    
 
 def ajouter_ouvrages(date, img, nom, prix, auteur, categorie):
      conn = mysql.connector.connect(user='root', password='',

@@ -117,7 +117,7 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th>id</th>
+                      <th>id </th>
                       <th>username</th>
                       <th>email</th>
                       <th>password</th>
@@ -126,10 +126,31 @@
                       <th>Date_naise</th>
                       <th>categorie</th>
                       <th>genre</th>
+                      <th>Action1</th>
+                      <th>Action2</th>
                     </tr>
                   </thead>
-                  <tbody>
+                    <tbody>
+                        {% for utilisateurs in Utilisateur %}
+                            <tr>
+                                <td>{{ utilisateurs[0] }}</td>
+                                <td>{{ utilisateurs[1] }}</td>
+                                <td>{{ utilisateurs[2] }}</td>
+                                <td>{{ utilisateurs[3] }}</td>
+                                <td>{{ utilisateurs[4] }}</td>
+                                <td>{{ utilisateurs[5] }}</td>
+                                <td>{{ utilisateurs[6] }}</td>
+                                <td>{{ utilisateurs[7] }}</td>
+                                <td>{{ utilisateurs[8] }}</td>
+                                <td>
+                                    <a href="{{url_for('register')}}">Modifier</a></td>
+                                <td><a href="{{url_for('register')}}">Supprimer</a></td>
+                            </tr>
+                           
+                        {% endfor %}
+
                     </tbody>
+                    
                 </table>
         
             <!-- page title area end -->

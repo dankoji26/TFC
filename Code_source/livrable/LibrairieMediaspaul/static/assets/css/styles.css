@@ -345,7 +345,7 @@
 /* mobile menu */
 
 .slicknav_menu {
-    background: #8255f7;
+    background: #f75555;
     padding: 0;
     margin-top: 20px;
 }
@@ -378,7 +378,7 @@
 
 .slicknav_nav .slicknav_row:hover {
     border-radius: 0;
-    background: #8e66f7;
+    background: #f77066;
 }
 
 .slicknav_nav li i {
@@ -687,7 +687,7 @@ ul.breadcrumbs {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    color: #7801ff;
+    color: #ee5743;
     letter-spacing: 0;
     margin-right: 16px;
     position: relative;
@@ -717,8 +717,8 @@ ul.breadcrumbs {
             align-items: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
-    background: linear-gradient(to right, #8914fe 0%, #8063f5 100%);
+    background: -webkit-linear-gradient(left, #e42f2f 0%, #f56863 100%);
+    background: linear-gradient(to right, #d33333 0%, #f56363 100%);
     padding: 17px 38px;
     position: relative;
 }
@@ -1022,7 +1022,7 @@ table.dbkit-table tr td {
 }
 
 .cripto-live ul li .icon.e {
-    background: #8a7fe2;
+    background: #e27f7f;
 }
 
 .cripto-live ul li .icon.t {
@@ -1062,7 +1062,7 @@ table.dbkit-table tr td {
 
 .trd-history-tabs ul li a:hover,
 .trd-history-tabs ul li a.active {
-    border-bottom: 2px solid #731ffd;
+    border-bottom: 2px solid #fd1f1f;
     padding-bottom: 7px;
     color: #565656;
 }
@@ -1111,7 +1111,7 @@ table.dbkit-table tr td {
 }
 
 .lts-content h2 a:hover {
-    color: #6d65dc;
+    color: #dc6565;
 }
 
 .lts-content p {

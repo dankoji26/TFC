@@ -12,6 +12,19 @@
       <meta name="author" content="" />
       <link rel="shortcut icon" href="../static/images/logo-mediaspaul-small.png" type="">
       <title>Mediaspaul</title>
+      <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../static/assets/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../static/assets/css/themify-icons.css">
+      <link rel="stylesheet" href="../static/assets/css/metisMenu.css">
+      <link rel="stylesheet" href="../static/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="../static/assets/css/slicknav.min.css">
+      <!-- amchart css -->
+      <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+      <!-- others css -->
+      <link rel="stylesheet" href="../static/assets/css/typography.css">
+      <link rel="stylesheet" href="../static/assets/css/default-css.css">
+      <link rel="stylesheet" href="../static/assets/css/styles.css">
+      <link rel="stylesheet" href="../static/assets/css/responsive.css">
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="../static/stylesite/bootstrap.css" />
       <!-- font awesome style -->
@@ -110,6 +123,16 @@
                      </ul>
                   </div>
                </nav>
+               <div class="col-sm-6 clearfix">
+                  <div class="user-profile pull-right">
+                      <img class="avatar user-thumb" src="../static/assets/images/author/avatar.png" alt="avatar">
+                      <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Admin <i class="fa fa-angle-down"></i></h4>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{{url_for('admin')}}">Deconnexion</a>
+                          <a class="dropdown-item" href="{{url_for('profile')}}">Profile</a>
+                      </div>
+                  </div>
+              </div>
             </div>
          </header>
          <!-- end header section -->

@@ -130,6 +130,23 @@
                   </thead>
                   <tbody>
                     </tbody>
+                    {% for supprimers in Supprimer %}
+                    <tr>
+                        <td>{{ supprimers[0] }}</td>
+                        <td>{{ supprimers[1] }}</td>
+                        <td>{{ supprimers[2] }}</td>
+                        <td>{{ supprimers[3] }}</td>
+                        <td>{{ supprimers[4] }}</td>
+                        <td>{{ supprimers[5] }}</td>
+                        <td>{{ supprimers[6] }}</td>
+                        <td>{{ supprimers[7] }}</td>
+                        <td>{{ supprimers[8] }}</td>
+                        <td>
+                        <td><a href="{{url_for('register')}}">Supprimer</a></td>
+                    </tr>
+                   
+                {% endfor %}
+
                 </table>
         
             <!-- page title area end -->

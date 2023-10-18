@@ -13,7 +13,7 @@ def admin():
     if request.method=='POST':
         username = request.form.get("username")
         password = request.form.get("password")
-
+        
         # Vérifiez le nom d'utilisateur et le mot de passe dans la base de données
 
         if basededonnees.usernameadmin_exists(username) and basededonnees.passwordadmin_is_correct(username, password):
@@ -53,12 +53,17 @@ def ajouterusers():
      return render_template("ajouterusers.html")
 @app.route('/afficherusers')
 def afficherusers():
-     return render_template("afficherusers.html")
+    utilisateur = basededonnees.afficher_users()
+    # Générer la page HTML
+    return render_template("afficherusers.html", Utilisateur = utilisateur)
+    
 @app.route('/afficherlivre')
 def afficherlivre():
-     return render_template("afficherlivre.html")
+     livre = basededonnees.afficher_ouvrage()
+     return render_template("afficherlivre.html", Livre = livre)
 @app.route('/supprimerusers')
 def supprimerusers():
+     
      return render_template("supprimerusers.html")
 @app.route('/modifierusers')
 def modifierusers():
@@ -107,16 +112,23 @@ def about():
 ############################################# OUVRAGE UTILISATEUR ##############################################
 @app.route('/product')
 def product():
-     return render_template("product.html")
+     livre = basededonnees.afficher_ouvrage()
+     return render_template("product.html", Livre = livre)
 ############################################# CONTACT UTILISATEUR ##############################################
 @app.route('/contact')
 def contact():
      return render_template("contact.html")
 
 
-@app.route('/recherche')
+@app.route('/recherche', methods=['GET', 'POST'])
 def recherche():
     return render_template("recherche.html")
+
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    p = login()
+
+    return render_template("profile.html", Profile = p)
 
 
 if __name__=='__main__':

@@ -126,7 +126,20 @@
                       <th>category</th>
                     </tr>
                   </thead>
+
                   <tbody>
+
+                    {% for livres in Livre %}
+                    <tr>
+                        <th>{{ livres[0] }}</th>
+                        <th>{{ livres[1] }}</th>
+                        <th>{{ livres[2] }}</th>
+                        <th>{{ livres[3] }}</th>
+                        <th>{{ livres[4] }}</th>
+                        <th>{{ livres[5] }}</th>
+                        <th>{{ livres[6] }}</th>
+                      </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
         
